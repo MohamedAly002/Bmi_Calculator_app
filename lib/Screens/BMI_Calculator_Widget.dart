@@ -1,4 +1,4 @@
-import 'package:bmi_calculator/GenderWidget.dart';
+import 'package:bmi_calculator/custom%20widget/GenderWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -13,9 +13,9 @@ class CalculatorScreen extends StatefulWidget {
 }
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
-  int slider_value = 50;
-  int weight = 50;
-  int age = 5;
+  int slider_value = 100;
+  int weight = 60;
+  int age = 10;
   String selectedGender = '';
 
   double calculateBMI() {
@@ -60,7 +60,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Expanded(
               child: Row(
                 children: [
@@ -91,15 +93,16 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(15)),
-                      color: Color(0xFF1c1c32)
-                  ),
+                      color: Color(0xFF1c1c32)),
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     children: [
@@ -107,7 +110,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                         padding: const EdgeInsets.only(top: 10, bottom: 10),
                         child: Text(
                           'Height',
-                          style: TextStyle(color: Color(0xFF71727e), fontSize: 25),
+                          style:
+                              TextStyle(color: Color(0xFF71727e), fontSize: 25),
                         ),
                       ),
                       Text(
@@ -133,7 +137,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Expanded(
               child: Row(
                 children: [
@@ -152,7 +158,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                               Expanded(
                                 child: Text('Weight',
                                     style: TextStyle(
-                                        color: Color(0xFF71727e), fontSize: 25)),
+                                        color: Color(0xFF71727e),
+                                        fontSize: 25)),
                               ),
                               Expanded(
                                 child: Text('$weight',
@@ -163,12 +170,12 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                               ),
                               Expanded(
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     ElevatedButton(
                                       onPressed: () {
-
-                                          weight++;
+                                        weight++;
 
                                         setState(() {});
                                       },
@@ -182,8 +189,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                     ),
                                     ElevatedButton(
                                       onPressed: () {
-                                        if (weight>1)
-                                        weight--;
+                                        if (weight > 1) weight--;
                                         setState(() {});
                                       },
                                       child: Icon(
@@ -209,8 +215,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                       child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(15)),
-                            color: Color(0xFF1c1c32)
-                        ),
+                            color: Color(0xFF1c1c32)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -218,7 +223,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                               Expanded(
                                 child: Text('Age',
                                     style: TextStyle(
-                                        color: Color(0xFF71727e), fontSize: 25)),
+                                        color: Color(0xFF71727e),
+                                        fontSize: 25)),
                               ),
                               Expanded(
                                 child: Text('$age',
@@ -232,10 +238,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                   children: [
                                     ElevatedButton(
                                       onPressed: () {
-                                        if (age<100){
+                                        if (age < 100) {
                                           age++;
                                         }
-                                        
+
                                         setState(() {});
                                       },
                                       child: Icon(
@@ -248,9 +254,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                                     ),
                                     ElevatedButton(
                                       onPressed: () {
-                                        if (age>1){
+                                        if (age > 1) {
                                           age--;
-
                                         }
                                         setState(() {});
                                       },
@@ -274,9 +279,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 5,),
-            
-            
+            SizedBox(
+              height: 5,
+            ),
             Row(
               children: [
                 Expanded(
@@ -286,16 +291,23 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                       String result = getResult(bmi);
                       String interpretation = getInterpretation(bmi);
                       Navigator.push(
-                        context,MaterialPageRoute(builder: (context)=>
-                          ResultScreen(BMIcalc: bmi, resultText:result,interpretation: interpretation,)
-                      ));
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ResultScreen(
+                                    BMIcalc: bmi,
+                                    resultText: result,
+                                    interpretation: interpretation,
+                                  )));
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(10),
-                      child: Text('Calculate',
-                        style: TextStyle(color: Colors.white,
+                      child: Text(
+                        'Calculate',
+                        style: TextStyle(
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 25),),
+                            fontSize: 25),
+                      ),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFFeb1455),

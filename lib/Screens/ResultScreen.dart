@@ -10,7 +10,7 @@ class ResultScreen extends StatelessWidget {
   final String interpretation;
 
   ResultScreen({
-   required this.BMIcalc,
+    required this.BMIcalc,
     required this.resultText,
     required this.interpretation,
   });
@@ -32,19 +32,25 @@ class ResultScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             Text(
               'Your Result',
-              style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
-                    color: Color(0xFF1c1c32)
-                ),
+                    color: Color(0xFF1c1c32)),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 2,
                 child: Padding(
@@ -53,21 +59,33 @@ class ResultScreen extends StatelessWidget {
                     alignment: Alignment.topCenter,
                     child: Column(
                       children: [
-                        SizedBox(height: 30,),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Expanded(
                           child: Text(
-                           '$resultText',
-                            style: TextStyle(color: Colors.green, fontSize: 30, fontWeight: FontWeight.bold),
+                            '$resultText',
+                            style: TextStyle(
+                                color: Colors.green,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
-                        SizedBox(height: 30,),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Expanded(
                           child: Text(
                             '$BMIcalc',
-                            style: TextStyle(color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 50,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
-                        SizedBox(height: 30,),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Expanded(
                           child: Text(
                             '$interpretation',
@@ -93,10 +111,14 @@ class ResultScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           'Re-Calculate',
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25),
                         ),
                       ),
-                      style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFeb1455)),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFFeb1455)),
                     ),
                   ),
                 ],
